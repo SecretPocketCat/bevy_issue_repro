@@ -1,0 +1,8 @@
+[package]
+name = "deadline_bevy"
+authors = ["SecretPocketCat <jiridexterhanc@gmail.com>"]
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = { version = "0.6.1" }
