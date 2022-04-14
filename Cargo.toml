@@ -1,5 +1,5 @@
 [package]
-name = "deadline_bevy"
+name = "bevy_repro"
 authors = ["SecretPocketCat <jiridexterhanc@gmail.com>"]
 version = "0.1.0"
 edition = "2021"
