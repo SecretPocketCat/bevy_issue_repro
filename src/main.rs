@@ -34,11 +34,15 @@ fn remove(mut commands: Commands, q: Query<Entity, With<ToBeRemoved>>) {
     }
 }
 
-fn log_removed(stage: CoreStage) -> impl Fn(RemovedComponents<ToBeRemoved>) {
-    move |removed| {
+fn log_removed(
+    stage: CoreStage,
+) -> impl Fn(Query<(), With<ToBeRemoved>>, RemovedComponents<ToBeRemoved>) {
+    move |query, removed| {
         let count = removed.iter().len();
-        if count > 0 {
-            info!("Removed {count} components in {stage:?}");
+        let query_count = query.iter().count();
+
+        if count > 0 || query_count > 0 {
+            info!("Removed: {count}; Query count: {query_count} in {stage:?}");
         }
     }
 }
